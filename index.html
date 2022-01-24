@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="main.js" async></script>
+    <title>Enter-Address</title>
+</head>
+<body>
+
+    <!--
+        This is about the address page which you will in very starting of the website.
+        it will be display first as a first page.
+    -->
+    <!--
+        This is the address-page.
+    -->
+    <div id="address-page">
+        <header>
+            <div class="container">    
+                <div class="logo">
+                    <img src= "logo.png"> 
+                    <span>FOOD TO DOOR</span>
+                </div>
+    
+                <div class=header-right>
+    
+                    <div class= home-option>
+                        <div class="header_option">
+                            <li><a href="homebutton" onclick="return show('address-page','home-page')">
+                                <i  class="fa fa-home" style="font-size: 30px;" ></i>
+                                Home</a>
+                            </li>
+                        </div>    
+                    </div>
+    
+                    <div class= login-option>
+                        <div class="header_option">
+                            <li><a href="loginbutton" onclick="return show('login-page','address-page')">
+                                <i class="fa fa-sign-in" style="font-size: 30px;" ></i>
+                                Login</a>
+                            </li>
+                        </div>    
+                    </div>
+                
+                    <div class="myprofile-option">
+                        <div class="header_option">
+                            <li><a href="profilebutton" onclick="return show('profile-page','address-page')">
+                                <i class="fa fa-user" style="font-size: 30px;"></i>
+                                MyProfile</a>
+                            </li>
+                        </div>
+                    </div>
+    
+                    <div class="help-option" >
+                        <div class="header_option" >
+                            <li><a href="helpbutton" onclick="return show('chat-page','address-page');">
+                                <i class="fa fa-question-circle" style="font-size: 32px;"></i>
+                                Help & Support</a>
+                            </li>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="enter-address">
+                <div class= search-option>
+                    <form action="/action_page.php">
+                        <h1>SEARCH NEAR BY RESTAURANT</h1>
+                        <input id="address" type="text" placeholder=" Enter your Address.." name="search" required>
+                        <button>
+                            <a class="search-button" href="#" onclick=" return address('home-page','address-page')">
+                                Search
+                            </a>    
+                        </button>
+                    </form>        
+                </div>
+            </div>
+        
+        </header>
+    
+        <!--
+            I copied footer twice in this file because i could not figured out a way to keep footer same as
+            a address-page in all of other the pages.
+            If you guys know how to do it then look in to it.
+            You will find again this same code in home-page section.
+        -->
+        <footer>
+            <div class="main-content">
+                    <div class="left box">
+                        <div class="content">
+                            <div class="links">
+                                <li class="l"><span>About us</span></li>
+                                <li class="l"><span>Privacy & Policy</span></li>
+                                <li class="l"><span>Terms & Conditions</span></li>
+                                <li class="l"><span>Contact</span></li>
+                            </div>
+                            
+                            <div class="media-icons">
+                                <i id="icon1" class="fa fa-facebook-square" style="font-size: 20px;"></i>
+                                <i id="icon2"class="fa fa-instagram" style="font-size: 20px;"></i>
+                                <i id="icon5"class="fa fa-youtube-play" style="font-size: 20px;"></i>
+                                <i id="icon3"class="fa fa-twitter" style="font-size: 20px;"></i>
+                                <i id="icon4"class="fa fa-pinterest-square" style="font-size: 20px;"></i>
+                                
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="center box">
+                        <div class="content">
+                            <h2>Address</h2>
+                            <div class="place">
+                                <i class="pin"></i>
+                                <span>Toronto,CANADA</span>
+                            </div>
+                            
+                            <div class="phone">
+                                <i class="e-call"></i>
+                                <span>+1(800)-999-9999</span>
+                            </div>
+                            
+                            <div class="email">
+                                <i class=""></i>
+                                <span>support.anytime@foodtodoor.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="right box">
+                        <div class="content">
+                            <h2>Subscribe</h2>
+                            <p>Get Awesome Promotion</p>
+                            <form action="#">
+                                <div class="name">
+                                    <div class="text">Name*</div>
+                                    <input type="name" placeholder="Firstname lastname">
+                                </div>
+                                <div class="email">
+                                    <div class="text">Email*</div>
+                                    <input type="email" placeholder="examples@mail.com">
+                                </div>
+                                <div class="button">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                                <div class="gotoheader-button">
+                                    <button>
+                                        <a href="#home-page" class="fa fa-arrow-circle-up" style="font-size: 25px;"></a>
+                                    </button>
+                                </div>
+                                <h5> &copy 2020|FOOD TO DOOR</h5>
+                            </form>
+                        </div>
+                    </div>                    
+            </div>   
+        </footer>
+    </div>
+
+    <!--
+        ------------------------------------------------------------------------------------------------------------
+        This is our home page. the page you will see after click on the search button.
+        it is including little same code as address-page(id) for the header and footer both.
+        it got menu items and fixed cart display.
+        it will be hidden untill we press on search button on address-page.
+    -->
+    <div id="home-page" style="display: none;">
+        <header id="header-homepage">        
+            <div class="container">
+                <div class="logo" >
+                    <img src= "logo.png"> 
+                    <span>FOOD TO DOOR</span>
+                </div>
+                <div class="currentLocation">
+                    <div class="main-header">
+                        <li><a href="loc" onclick="return show('address-page','home-page')">
+                            <h3>DELIVERED TO :  </h3>
+                            <h1 id="locations">
+                                Location
+                            </h1>
+                        </a>
+                        </li>
+                    </div>
+                </div>
+
+                <div class=header-right>
+                    <div class= home-option>
+                        <div class="header_option">
+                            <li><a href="Homebutton" style="font-size: 25px;">
+                                <i  class="fa fa-home" ></i>
+                                Home</a>
+                            </li>
+                        </div>    
+                    </div>
+
+                    <div class= login-option>
+                        <div class="header_option">
+                            <li><a  href="loginbutton" onclick="return show('login-page','home-page')">
+                                <i  class="fa fa-sign-in" style="font-size: 30px;"></i>
+                                Login</a>
+                            </li>
+                        </div>    
+                    </div>
+                
+                    <div class="myprofile-option">
+                        <div class="header_option">
+                            <li><a href="profilebutton" onclick="return show('profile-page','home-page')" >
+                                <i class="fa fa-user" style="font-size: 30px;" ></i>
+                                <span id="change-name">
+                                    MyProfile
+                                </span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="help-option">
+                        <div class="header_option">
+                            <li><a href="livebutton" onclick="return show('chat-page','home-page');">
+                                <i class="fa fa-commenting-o" style="font-size: 30px;" ></i>
+                                Live Chat</a>
+                            </li>    
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <section>
+                <div id="search-restaurant" >
+                    
+                            <input id="get-restaurant" style="font-size: 1.5rem;" onkeyup="searchRestaurant()" type="text" placeholder="Search Restaurant.." name="search" required>
+                        <button>
+                            <a class="search-button" href="#">
+                                <i class="fa fa-search" style="font-size: 32px;"></i>
+                            </a>    
+                        </button>
+                        
+                    </form>  
+                </div>
+            </section>
+        </header>
+
+<!--
+    Thi is restaurant menu which you can get by search the name from below 4 restaurants.
+    you will be getting one restaurant after search and when you click on that you will see the
+    restaurant added at the bottom of all default restaurant and same thing will happen for that 
+    restaurant as others(default one.)
+-->
+
+<div id="all-restaurant">
+    <div id="restaurants">
+        <div class="bring-up-menu-page">
+            <span class="intro-header">VIEW MORE RESTAURANT CLICK BELOW OR SEARCH ABOVE</span>
+            <li class="goto-res" onclick="return show('menu-page-PIZZA','all-restaurant')">
+                Pizza-Bistrow
+            </li>
+            <li class="goto-res" onclick="return show('menu-page-KIMCHI','all-restaurant')">
+                Kimchi
+            </li>
+            <li class="goto-res" onclick="return show('menu-page-FRESHII','all-restaurant')">
+                Freshii
+            </li>
+            <li class="goto-res" onclick="return show('menu-page-NEWYORK','all-restaurant')">
+                New-York-Fries
+            </li>
+        </div>
+        
+<!--
+    Here we have 3 fake restaurant which will showing in our display as it was in paper prototype.
+    when you click on menu you can see the same menu for all the restaurant and if we want to put 
+    different menu for all 7 restaurant then it will a lot of duplicate code with just different item
+    name.
+    if any one know how to do it by java script then please do it.
+    other than i faked menu for just one restaurant in it is showing below.
+-->
+        <div id="res-1-menu" class="restaurant-1">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture1.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">KFC</span>
+                    <span>Location: 5643 Duglad Road</span>
+                    <span>
+                        Rating:3.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                        <a class="fa fa-star-o"></a></span>
+                    <button id="view-more">
+                        <a class="menu-button" href="#" onclick=" return show('menu-page-KFC','all-restaurant')">
+                            MENU 
+                        </a>  
+                    </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $10</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+
+        </div>
+        <div id="res-2-menu" class="restaurant-1">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture2.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">MCD</span>
+                    <span>Location: 49 Goulet Street</span>
+                    <span>
+                        Rating:4.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                    </span>
+                    <button id="view-more">
+                        <a class="menu-button" href="#" onclick=" return show('menu-page-MCD','all-restaurant')">
+                            MENU 
+                        </a>  
+                    </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $20</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="res-3-menu" class="restaurant-1">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture3.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">Subway</span>
+                    <span>Location: 1100 Main Street</span>
+                    <span>
+                        Rating:4.0
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-o"></a></span>
+                        <button id="view-more">
+                            <a class="menu-button" href="#" onclick=" return show('menu-page-SUB','all-restaurant')">
+                                MENU 
+                            </a>  
+                        </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $30</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="res-4-menu" class="restaurant-1" style="display: none;">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture2.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">Pizza Bistrow</span>
+                    <span>Location: abc Street</span>
+                    <span>
+                        Rating:4.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                        <a class="fa fa-star-o"></a></span>
+                        <button id="view-more">
+                            <a class="menu-button" href="#" onclick=" return show('menu-page-PIZZA','all-restaurant')">
+                                MENU 
+                            </a>  
+                        </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $40</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="res-5-menu" class="restaurant-1" style="display: none;">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">Kimchi</span>
+                    <span>Location: abc Street</span>
+                    <span>
+                        Rating:4.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                        <a class="fa fa-star-o"></a></span>
+                        <button id="view-more">
+                            <a class="menu-button" href="#" onclick=" return show('menu-page-KIMCHI','all-restaurant')">
+                                MENU 
+                            </a>  
+                        </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $40</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="res-6-menu" class="restaurant-1" style="display: none;">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">Freshii</span>
+                    <span>Location: abc Street</span>
+                    <span>
+                        Rating:4.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                        <a class="fa fa-star-o"></a></span>
+                        <button id="view-more">
+                            <a class="menu-button" href="#" onclick=" return show('menu-page-FRESHII','all-restaurant')">
+                                MENU 
+                            </a>  
+                        </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $40</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="res-7-menu" class="restaurant-1" style="display: none;">
+            <div class="res1">
+                <div class="res1-pic">
+                    <img src="res-picture.jpg">
+                </div>
+                <div class="res1-moreinfo">
+                    <span id="Restaurant-name">New York Fries</span>
+                    <span>Location: abc Street</span>
+                    <span>
+                        Rating:4.5
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star"></a>
+                        <a class="fa fa-star-half-o"></a>
+                        <a class="fa fa-star-o"></a></span>
+                        <button id="view-more">
+                            <a class="menu-button" href="#" onclick=" return show('menu-page-NEWYORK','all-restaurant')">
+                                MENU 
+                            </a>  
+                        </button>
+                </div>
+                <div class="res1-price">
+                    <span>Price: $40</span>
+                    <span>Time to Delivery: 30min-40min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!--
+    THis is our cart section which will stay on home-page.
+    it will be adding item from all the different restaunrant. 
+    since we have same item name throghout 7 restaurant. it will not allow to duplicate item in same cart eventhough
+    it is from different restaurant.
+-->
+    <div id="cart-update">
+        <div id="random-meal">
+            <!--make the random meal button add a random item-->
+            <button class="randBtn" onclick = "return addRandItem()">
+                Random Meal
+            </button>
+        </div>
+
+        <div class="food-cart">
+            <h1>ORDER CART</h1>
+            <div class="cart-display">
+                <span class="name-of-item col">ITEM</span>
+                <span class="quantity-of-item col">QUANTITY</span>
+                <span class="price-of-item col">PRICE</span>
+            </div>
+            <div class="cart-container">
+                    
+            </div>
+            <div class="cart-total-items">
+                <span class="total-items">Total Iteams:</span>
+                <span class="total-items"></span>
+            </div>
+            
+            <div class="cart-total-price">
+                <span class="total-updated-price">Total-Price:</span>
+                <span class="total-updated-price"></span>
+            </div>
+
+            <button id="place-order-button" onclick="return hidemultiple('payment-page','home-page')">
+                PLACE ORDER
+            </button>
+
+        </div>
+    </div>
+    
+</div>
+
+<!--
+    this is one i was talking about above. this is menu for restaurant and i put same menu
+    for all 7 restaurant that we have in our website.
+    if we want 7 different menues then it will 6 time more code like below.
+-->
+<div id="menu-page-KFC" style="display: none;">
+    <div id="menu-page">
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-KFC')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                    
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()" >Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+            
+        </section>
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KFC-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </div>
+    
+</div>
+<!---------------------Menu for the MCD------------------------------------------->
+
+<div id="menu-page-MCD" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-MCD')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">MCD-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+<!----------------------------Menu for Subway---------------------------->
+
+<div id="menu-page-SUB" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-SUB')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">SUB-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+<!----------------------------Menu for PIZZA---------------------------->
+
+<div id="menu-page-PIZZA" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-PIZZA')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">PIZ-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+<!----------------------------Menu for KIMCHI---------------------------->
+
+<div id="menu-page-KIMCHI" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-KIMCHI')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">KIM-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+<!----------------------------Menu for FRESHII---------------------------->
+
+<div id="menu-page-FRESHII" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+    
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-FRESHII')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">FRE-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+<!----------------------------Menu for NEWYORK---------------------------->
+
+<div id="menu-page-NEWYORK" style="display: none;">
+    <div id="menu-page" >
+    <div class="category">
+
+        <button id="view-more">
+            <a class="fa fa-arrow-left " style=font-size:80px href="#" onclick=" return showOnDisplay('all-restaurant','menu-page-NEWYORK')">
+            </a>  
+        </button>
+        <section class="Chicken">
+            <h1 class="Category-header">Category-1</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item1</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item2</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food2">
+                    <span class="list-of-items-price">$12.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item3</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food3">
+                    <span class="list-of-items-price">$8.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item4</span>
+                    <img class = "list-of-items-image" src="item1.jpg" alt="food1">
+                    <span class="list-of-items-price">$10.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        
+        <!------------2 class="Category-header" category------------->
+        <section class="Fish">
+            <h1 class="Category-header">Category-2</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item5</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item6</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item7</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item8</span>
+                    <img class = "list-of-items-image" src="item2.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!------------3 class="Category-header" category------------->
+        <section class="Veg.">
+            <h1 class="Category-header">Category-3</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item9</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item10</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item11</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item12</span>
+                    <img class = "list-of-items-image" src="item8.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!------------4 class="Category-header" category------------->
+        <section class="Drink">
+            <h1 class="Category-header">Category-4</h1>
+            <h2 class="Category-header">Food Item List</h2>
+            <div class="purchase-food">
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item13</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food1">
+                    <span class="list-of-items-price">$7.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item14</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food2">
+                    <span class="list-of-items-price">$5.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item15</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+                <div class="list-of-items">
+                    <span class="list-of-items-description">NEW-Item16</span>
+                    <img class = "list-of-items-image" src="item6.jpg" alt="food3">
+                    <span class="list-of-items-price">$2.99</span>
+                    <button class="list-of-items-addBtn"onclick="popup()">Add To Cart</button>
+                </div>
+            </div>
+        </section>   
+    </div>
+    </div>
+</div>
+
+
+<!--
+    THis is live update part which will be seen once we place an order so this will be our last part of coding.
+-->
+
+
+        <!--
+            AS i mentioned before that we have duplicate code for footer and here it is.
+        -->
+<footer>
+    <div class="main-content">
+            <div class="left box">
+                <div class="content">
+                    <div class="links">
+                        <li class="l"><span>About us</span></li>
+                        <li class="l"><span>Privacy & Policy</span></li>
+                        <li class="l"><span>Terms & Conditions</span></li>
+                        <li class="l"><span>Contact</span></li>
+                    </div>
+                    
+                    <div class="media-icons">
+                        <i id="icon1" class="fa fa-facebook-square" style="font-size: 20px;"></i>
+                        <i id="icon2"class="fa fa-instagram" style="font-size: 20px;"></i>
+                        <i id="icon5"class="fa fa-youtube-play" style="font-size: 20px;"></i>
+                        <i id="icon3"class="fa fa-twitter" style="font-size: 20px;"></i>
+                        <i id="icon4"class="fa fa-pinterest-square" style="font-size: 20px;"></i>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="center box">
+                <div class="content">
+                    <h2>Address</h2>
+                    <div class="place">
+                        <i class="pin"></i>
+                        <span>Toronto,CANADA</span>
+                    </div>
+                    
+                    <div class="phone">
+                        <i class="e-call"></i>
+                        <span>+1(800)-999-9999</span>
+                    </div>
+                    
+                    <div class="email">
+                        <i class=""></i>
+                        <span>support.anytime@foodtodoor.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right box">
+                <div class="content">
+                    <h2>Subscribe</h2>
+                    <p>Get Awesome Promotion</p>
+                    <form action="#">
+                        <div class="name">
+                            <div class="text">Name*</div>
+                            <input type="name" placeholder="Firstname lastname">
+                        </div>
+                        <div class="email">
+                            <div class="text">Email*</div>
+                            <input type="email" placeholder="examples@mail.com">
+                        </div>
+                        <div class="button">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                        <div class="gotoheader-button">
+                            <button>
+                                <a href="#home-page" class="fa fa-arrow-circle-up" style="font-size: 25px;"></a>
+                            </button>
+                        </div>
+                        <h5> &copy 2020|FOOD TO DOOR</h5>
+                    </form>
+                </div>
+            </div>                    
+    </div>
+</footer>
+</div>
+
+
+
+<!--
+    This is our profile-page when you clicked on myprofile from home page then it will bring you to the profile-page.
+
+-->
+    <div id="profile-page" style="display: none;">
+        <div class="profile-container">
+            <div class="profile-container-left">
+                <div class="profile-picture">
+                    <h1>PICTURE goes here.</h1>
+                </div>
+                <div class="profile-links">
+                    <li><a href="#">View Profile</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Payment Methods</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Order History</a></li>
+                    <li><a href="out" onclick="return show('address-page','profile-page')">Log out</a></li>
+                </div>
+            </div>
+            <div class="profile-container-right">
+                <div class="profile-header">
+                    <span id="profile">PROFILE</span>
+                    <h1 id="profile" style="display: none;">ACCOUNT</h1>
+                    <h1 id="profile" style="display: none;">PAYMENT METHODS</h1>
+                    <h1 id="profile" style="display: none;">PRIVACY</h1>
+                    <h1 id="profile" style="display: none;">NOTIFICATIONS</h1>
+                    <h1 id="profile" style="display: none;">ORDER HISTORY</h1>
+                    <h1 id="profile" style="display: none;">LOGOUT</h1>
+                    <button id="close-profile" onclick="return goBack()">
+                        <a class="fa fa-close" style="font-size: 40px;"></a>
+                    </button>
+                </div>
+                <div class="info-page-profile">
+                    <form action="">
+                        <h3 id="tags">Name:</h3>
+                        <input type="text" id="Name" placeholder="First Name">
+                        <input type="text" id="Name" placeholder="Last Name">
+                        <h3 id="tags">Delivery Address:</h3>
+                        <input type="text" id="Name" placeholder="House Number">
+                        <input type="text" id="Name" placeholder="Street...">
+                        <div class="place">
+                            <input type="text" id="place" placeholder="City">
+                            <input type="text" id="place" placeholder="Province">
+                            <input type="text" id="place" placeholder="Country">
+                        </div>
+                        <h3 id="tags">Phone Number:</h3>
+                            <input type="text" id="place" placeholder="#Phone Number">
+                        <h3 id="tags">Other:</h3>
+                        <textarea id="Allergy" cols="60" rows="3" placeholder="Allergy Preference.."></textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        This is our chat page when you click on live chat from home-page it will bring you to the chat-page.
+    -->
+    
+    <div id="chat-page" style="display: none;">
+             <div class="container-chat">
+                <h2>LIVE CHAT</h2>
+                <div class="chat">
+                    <p>Fill out the form to chat with next available agent.</p>
+                    <p>THANK YOU FOR YOUR PATIENT.</p>
+                    <form action="#">
+                        <div id="name">
+                            <h3>NAME*</h3>
+                            <input id="chat-name" type="name" style="font-size: larger;"placeholder="Firstname Lastname">
+                        </div>
+                        <div id="email">
+                            <h3>EMAIL*</h3>
+                            <input id="chat-email" type="email" style="font-size: larger;" placeholder="email@your.com">
+                        </div>
+                        <div id="Question">
+                            <h3>QUESTION*</h3>
+                            <textarea id="chat-question" style="font-size: 1.2rem;" rows="7"  placeholder=" Enter your questions here"></textarea>
+                        </div>
+                        <div id="submit">
+                            <button id="submitBtn" type="submit" onclick="return displayMsg()">
+                                START CHAT
+                            </button>
+                            <button id="close" onclick="return goBack()">
+                                close
+                            </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+    </div>
+
+    <div id="payment-page" style="display: none;">
+        <header id="payment-header">
+            <div class="container">    
+                <div class="logo">
+                    <img src= "logo.png"> 
+                    <span>FOOD TO DOOR</span>
+                </div>
+            </div>
+        </header>
+
+        <button id="back-button" onclick="return show('home-page','payment-page')">X</button>
+        <section id="payment-section">
+            <div id="payment-content">
+                <form id="payment-fields">
+                    <h1>
+                        <i class="fa fa-ship"></i>
+                        Shipping Details
+                    </h1>
+                    <div class="personal-information">
+                        <div>
+                            <label for="f-name" id="set">First</label>
+                            <input id="name" type="text" name="f-name" placeholder="John" maxlength="16" style="font-size: large;" required>
+                        </div>
+                        <div>
+                            <label for="l-name" id="set">Last</label>
+                            <input id="name" type="text" name="l-name" placeholder="Thomas" maxlength="16" style="font-size: large;" required>
+                        </div>
+                    </div>
+                    <div class="street">
+                        <label for="name">Street</label>
+                        <input id="street-box" type="text" name="address" placeholder="abc street" maxlength="30" style="font-size: large;" required>
+                    </div>
+                    <div class="address-information">
+                        <div>
+                            <label for="city" id="set">City</label>
+                            <input type="text" name="city" id="set" placeholder="city" maxlength="20" style="font-size: large;" required>
+                        </div>
+                        <div>
+                            <label for="state" id="set">State</label>
+                            <input type="text" name="state" id="set" placeholder="State" maxlength="20" style="font-size: large;" required>
+                        </div>
+                        <div>
+                            <label for="zip" id="set">Postal Code</label>
+                            <input type="text" name="zip" id="set" placeholder="A#B#C#" maxlength="6" style="font-size: large;" required>
+                        </div>
+                    </div>
+                    <h1>
+                        <i class="fa fa-credit-card"></i> Payment Information
+                    </h1>
+                    <div class="cc-num">
+                        <label for="card-num">Credit Card No.</label>
+                        <input id="number" type="text" name="card-num" placeholder="8888 8888 8888 8888" maxlength = "19" style="font-size: large;" required>
+                    </div>
+                    <div class="cc-info">
+                        <div id="number">
+                            <label for="card-num">Exp</label>
+                            <input id="number" type="text" name="expire" placeholder="mm/yy" maxlength = "5" style="font-size: large;" required>
+                        </div>
+                        <div id="cvv">
+                            <label for="card-num">CCV</label>
+                            <input id="cvvnum" type="text" name="security" placeholder="123" maxlength = "3" style="font-size: large;" required>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button id="purchase" style="color: rgb(218, 71, 71);" onclick="return getChecked('live-order','payment-page')">Purchase</button>
+                        <button id="goBack" onclick="return show('home-page','payment-page')">Back to cart</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="main-content">
+                    <div class="left box">
+                        <div class="content">
+                            <div class="links">
+                                <li class="l"><span>About us</span></li>
+                                <li class="l"><span>Privacy & Policy</span></li>
+                                <li class="l"><span>Terms & Conditions</span></li>
+                                <li class="l"><span>Contact</span></li>
+                            </div>
+                            
+                            <div class="media-icons">
+                                <i id="icon1" class="fa fa-facebook-square" style="font-size: 20px;"></i>
+                                <i id="icon2"class="fa fa-instagram" style="font-size: 20px;"></i>
+                                <i id="icon5"class="fa fa-youtube-play" style="font-size: 20px;"></i>
+                                <i id="icon3"class="fa fa-twitter" style="font-size: 20px;"></i>
+                                <i id="icon4"class="fa fa-pinterest-square" style="font-size: 20px;"></i>
+                                
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="center box">
+                        <div class="content">
+                            <h2>Address</h2>
+                            <div class="place">
+                                <i class="pin"></i>
+                                <span>Toronto,CANADA</span>
+                            </div>
+                            
+                            <div class="phone">
+                                <i class="e-call"></i>
+                                <span>+1(800)-999-9999</span>
+                            </div>
+                            
+                            <div class="email">
+                                <i class=""></i>
+                                <span>support.anytime@foodtodoor.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="right box">
+                        <div class="content">
+                            <h2>Subscribe</h2>
+                            <p>Get Awesome Promotion</p>
+                            <form action="#">
+                                <div class="name">
+                                    <div class="text">Name*</div>
+                                    <input type="name" placeholder="Firstname lastname">
+                                </div>
+                                <div class="email">
+                                    <div class="text">Email*</div>
+                                    <input type="email" placeholder="examples@mail.com">
+                                </div>
+                                <div class="button">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                                <div class="gotoheader-button">
+                                    <button>
+                                        <a href="#home-page" class="fa fa-arrow-circle-up" style="font-size: 25px;"></a>
+                                    </button>
+                                </div>
+                                <h5> &copy 2020|FOOD TO DOOR</h5>
+                            </form>
+                        </div>
+                    </div>                    
+            </div>
+        </footer>
+    </div>
+
+    <!--
+        This is Login and Sign-up page..
+    -->
+    <div id="live-order" style="display: none;">
+        <div class="live-order-track animate" action="/action_page.php"> 
+            <div class="intro-text">
+                <h1>Thank you for your order.</h1>
+                <button id="Order-again-button"> <a href="index.html" style="text-decoration: none;">Order Again</a> </button>
+                <h2>Check you live update..</h2>
+            </div>
+            <form id="form" action="#">
+                <h4 id="text-live">LIVE-UPDATE</h4>
+                <div id="l-update">
+                    <img src="delivery-map.jpg" alt="delivery">
+                </div>
+            </form>
+        </div> 
+    </div>
+
+    <div id="login-page" style="display: none;">
+        <div class="registerbox">
+            <button id="close-button" onclick="return goBack()" style="background-color: white;">X</button>
+            <img src="avatar.png" class="avatar">
+            <h1 id="register">Register Here</h1>
+            <form>
+                <p>Email address</p>
+                <input id="register-input1" type="text" name="Email" placeholder="  Enter Email">
+                <p>Password</p>
+                <input id="register-input2" type="password" name="password" id="password" placeholder="Enter Password">
+                <p>Repeat Password</p>
+                <input id="register-input3" type="password" name="confirmPassword" id="confirmPassword" onkeyup="myFunction()" placeholder="Repeat Password">
+                <span id='message'></span>
+                <p>By creating an account, you agree to our <a href="#">Terms & Privacy</a></p>
+                <button id="register-button" type="button" onclick="return showRegister('home-page','login-page')">Register</button>
+                <p>Already have an account? <a onclick="return show('id01','login-page')">Sign Up</a> </p>
+                <a id="signin-guest" style="font-size: 25px;" href="continue" onclick="return show('home-page','login-page')">Sign in as a Guest</a>
+            </form>
+        </div>
+        
+    </div>
+
+    <!--Step 1 : Adding HTML-->
+    <div id="id01" class="modal" style="display: none;" > 
+        <form class="modal-content animate" action="/action_page.php"> 
+            <div class="imgcontainer" > 
+                <span onclick="return show('login-page','id01')" class="close" title="Close Modal">×</span> 
+                <img src= "logo.png" alt="Avatar" class="avatar"> 
+            </div> 
+
+            <div class="container-signin"> 
+                <label><b>Username</b></label> 
+                <input id="input-id01" type="text" placeholder="Enter Username" name="uname" required> 
+
+                <label><b>Password</b></label> 
+                <input id="input-id02" type="password" placeholder="Enter Password" name="psw" required> 
+
+                <button id="button-id01" type="submit" onclick="return showLogin('home-page','id01')">Login</button> 
+                <input id="input-id01" type="checkbox" unchecked="unchecked"> Remember me 
+            </div> 
+
+            <div class="container-signin" style="background-color:#f1f1f1"> 
+                <button type="button" onclick="return show('login-page','id01')" class="cancelbtn">Cancel</button> 
+                <span class="psw">Forgot <a href="#">username</a> or <a href="#">password?</a></span> 
+            </div> 
+        </form> 
+    </div>
+
+    
+</body>
+</html>
